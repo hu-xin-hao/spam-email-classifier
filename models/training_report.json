@@ -1,0 +1,254 @@
+{
+  "dataset": "data\\SMSSpamCollection",
+  "data_sources": [
+    "data\\SMSSpamCollection",
+    "data\\trec06c.csv"
+  ],
+  "samples": 34282,
+  "train_samples": 27425,
+  "test_samples": 6857,
+  "spam_samples": 13215,
+  "ham_samples": 21067,
+  "best_algorithm": "tfidf_svm",
+  "best_model_name": "TF-IDF + SVM",
+  "selection_method": {
+    "validation": "Stratified 5-fold cross-validation on training set",
+    "primary_metric": "mean F1",
+    "tie_breakers": [
+      "mean precision",
+      "mean ROC-AUC",
+      "lower F1 standard deviation"
+    ],
+    "test_set_usage": "Final evaluation only"
+  },
+  "language_samples": {
+    "中文邮件": 29113,
+    "英文短信": 5169
+  },
+  "language_test_samples": {
+    "中文邮件": 5823,
+    "英文短信": 1034
+  },
+  "language_metrics": {
+    "中文邮件": {
+      "accuracy": 0.98214,
+      "precision": 0.977787,
+      "recall": 0.980899,
+      "f1": 0.97934,
+      "roc_auc": 0.997454,
+      "confusion_matrix": [
+        [
+          3254,
+          56
+        ],
+        [
+          48,
+          2465
+        ]
+      ]
+    },
+    "英文短信": {
+      "accuracy": 0.983559,
+      "precision": 0.945312,
+      "recall": 0.923664,
+      "f1": 0.934363,
+      "roc_auc": 0.993727,
+      "confusion_matrix": [
+        [
+          896,
+          7
+        ],
+        [
+          10,
+          121
+        ]
+      ]
+    }
+  },
+  "metrics": {
+    "count_naive_bayes": {
+      "accuracy": 0.899956,
+      "precision": 0.914479,
+      "recall": 0.816944,
+      "f1": 0.862964,
+      "roc_auc": 0.916057,
+      "confusion_matrix": [
+        [
+          4011,
+          202
+        ],
+        [
+          484,
+          2160
+        ]
+      ],
+      "feature_method": "count",
+      "algorithm": "naive_bayes",
+      "display_name": "词频 + 朴素贝叶斯",
+      "cv_accuracy_mean": 0.898924,
+      "cv_accuracy_std": 0.004155,
+      "cv_precision_mean": 0.909915,
+      "cv_precision_std": 0.004654,
+      "cv_recall_mean": 0.818845,
+      "cv_recall_std": 0.008847,
+      "cv_f1_mean": 0.861961,
+      "cv_f1_std": 0.00608,
+      "cv_roc_auc_mean": 0.914039,
+      "cv_roc_auc_std": 0.005062
+    },
+    "count_logistic_regression": {
+      "accuracy": 0.975062,
+      "precision": 0.962589,
+      "recall": 0.973147,
+      "f1": 0.967839,
+      "roc_auc": 0.993859,
+      "confusion_matrix": [
+        [
+          4113,
+          100
+        ],
+        [
+          71,
+          2573
+        ]
+      ],
+      "feature_method": "count",
+      "algorithm": "logistic_regression",
+      "display_name": "词频 + 逻辑回归",
+      "cv_accuracy_mean": 0.974622,
+      "cv_accuracy_std": 0.001853,
+      "cv_precision_mean": 0.968958,
+      "cv_precision_std": 0.003785,
+      "cv_recall_mean": 0.965094,
+      "cv_recall_std": 0.002992,
+      "cv_f1_mean": 0.967016,
+      "cv_f1_std": 0.002386,
+      "cv_roc_auc_mean": 0.993345,
+      "cv_roc_auc_std": 0.000645
+    },
+    "count_svm": {
+      "accuracy": 0.962958,
+      "precision": 0.976096,
+      "recall": 0.926626,
+      "f1": 0.950718,
+      "roc_auc": 0.992695,
+      "confusion_matrix": [
+        [
+          4153,
+          60
+        ],
+        [
+          194,
+          2450
+        ]
+      ],
+      "feature_method": "count",
+      "algorithm": "svm",
+      "display_name": "词频 + SVM",
+      "cv_accuracy_mean": 0.962297,
+      "cv_accuracy_std": 0.001566,
+      "cv_precision_mean": 0.984483,
+      "cv_precision_std": 0.004397,
+      "cv_recall_mean": 0.916659,
+      "cv_recall_std": 0.00335,
+      "cv_f1_mean": 0.94935,
+      "cv_f1_std": 0.002064,
+      "cv_roc_auc_mean": 0.992424,
+      "cv_roc_auc_std": 0.000646
+    },
+    "tfidf_naive_bayes": {
+      "accuracy": 0.915561,
+      "precision": 0.898803,
+      "recall": 0.880106,
+      "f1": 0.889356,
+      "roc_auc": 0.95789,
+      "confusion_matrix": [
+        [
+          3951,
+          262
+        ],
+        [
+          317,
+          2327
+        ]
+      ],
+      "feature_method": "tfidf",
+      "algorithm": "naive_bayes",
+      "display_name": "TF-IDF + 朴素贝叶斯",
+      "cv_accuracy_mean": 0.914093,
+      "cv_accuracy_std": 0.003058,
+      "cv_precision_mean": 0.897741,
+      "cv_precision_std": 0.003344,
+      "cv_recall_mean": 0.877023,
+      "cv_recall_std": 0.005452,
+      "cv_f1_mean": 0.887257,
+      "cv_f1_std": 0.004149,
+      "cv_roc_auc_mean": 0.958507,
+      "cv_roc_auc_std": 0.002028
+    },
+    "tfidf_logistic_regression": {
+      "accuracy": 0.973166,
+      "precision": 0.965556,
+      "recall": 0.964826,
+      "f1": 0.965191,
+      "roc_auc": 0.996464,
+      "confusion_matrix": [
+        [
+          4122,
+          91
+        ],
+        [
+          93,
+          2551
+        ]
+      ],
+      "feature_method": "tfidf",
+      "algorithm": "logistic_regression",
+      "display_name": "TF-IDF + 逻辑回归",
+      "cv_accuracy_mean": 0.971778,
+      "cv_accuracy_std": 0.001814,
+      "cv_precision_mean": 0.968369,
+      "cv_precision_std": 0.003932,
+      "cv_recall_mean": 0.958093,
+      "cv_recall_std": 0.003025,
+      "cv_f1_mean": 0.963197,
+      "cv_f1_std": 0.002339,
+      "cv_roc_auc_mean": 0.996101,
+      "cv_roc_auc_std": 0.000468
+    },
+    "tfidf_svm": {
+      "accuracy": 0.982354,
+      "precision": 0.976217,
+      "recall": 0.978064,
+      "f1": 0.97714,
+      "roc_auc": 0.997394,
+      "confusion_matrix": [
+        [
+          4150,
+          63
+        ],
+        [
+          58,
+          2586
+        ]
+      ],
+      "feature_method": "tfidf",
+      "algorithm": "svm",
+      "display_name": "TF-IDF + SVM",
+      "cv_accuracy_mean": 0.980018,
+      "cv_accuracy_std": 0.001479,
+      "cv_precision_mean": 0.980092,
+      "cv_precision_std": 0.003596,
+      "cv_recall_mean": 0.967837,
+      "cv_recall_std": 0.003017,
+      "cv_f1_mean": 0.973918,
+      "cv_f1_std": 0.001918,
+      "cv_roc_auc_mean": 0.997556,
+      "cv_roc_auc_std": 0.000332
+    }
+  },
+  "labels": {
+    "0": "正常邮件",
+    "1": "垃圾邮件"
+  }
+}
